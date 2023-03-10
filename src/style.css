@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 200px 1fr 80px;
+}
+
+#header {
+    background-color: blue;
+}
+
+#mainContent {
+    background-color: whitesmoke;
+}
+
+#footer {
+    background-color: black;
+}
