@@ -1,2 +1,9 @@
-document.body.innerHTML = "Test";
-console.log("COUCOU");
+import buildPage from './pageBuilder';
+import './style.css';
+
+
+let parentElement = document.createElement("div");
+
+buildPage(parentElement);
+
+document.body.appendChild(parentElement);
