@@ -3,19 +3,66 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: 'vanilla';
+    src: url('./fonts/vanilla_caramel.otf');
+    font-weight: bolder;
+  }
+
 #content {
     height: 100vh;
     display: grid;
     grid-template-rows: 200px 1fr 80px;
 }
 
+
+/* HEADER */
+
 #header {
-    background-color: blue;
+    background-color: rgb(51, 46, 46);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#mainContent {
+.logo {
+    max-height: 60%;
+    padding: 30px;
+    filter: brightness(0) invert(1);
+}
+
+h1 {
+    font-family: 'vanilla';
+    color: whitesmoke;
+    padding: 30px;
+    font-size: 60px;
+}
+
+
+/* CENTRAL CONTENT */
+
+#centralContent {
+    display: flex;
     background-color: whitesmoke;
 }
+
+#navigation {
+    flex: 1;
+    min-width: 150px;
+    background-color: red;
+}
+
+#modularContent {
+    flex: 5;
+    background-color: blueviolet;
+}
+
+.main-image {
+    height: 50vh;
+}
+
+
+/* FOOTER */
 
 #footer {
     background-color: black;
