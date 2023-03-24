@@ -86,17 +86,23 @@ h1 {
 
 .navLink:hover {
     box-shadow: 4px 4px 20px black;
-    border: 2px solid black;
 }
 
 .navLink:active {
     background-color: gray;
-    box-shadow: 4px 4px 10px black;
 }
 
 .current {
     background-color: rgb(45, 45, 45);
     color: whitesmoke;
+}
+
+.current:hover {
+    box-shadow: 4px 4px 10px black;
+}
+
+.current:active {
+    background-color: rgb(45, 45, 45);
 }
 
 #modularContent {

@@ -30,15 +30,23 @@ const buildPage = (element) => {
     // NAVIGATION
 
     const linkNames = ["Home", "Menu", "Contact"];
-
-    linkNames.forEach(link => {
+    
+    linkNames.forEach(linkName => {
         const newLink = document.createElement("div");
         newLink.classList.add("navLink");
-        newLink.innerHTML = link;
+        newLink.innerHTML = linkName;
         newLink.onclick = switchTab;
 
         navigation.appendChild(newLink);
+
+        // Set a current tab at load
+        if(linkName == "Home") {
+            newLink.classList.add("current");
+            createHome(modularContent);
+        }
     });
+
+
 
 
     // MODULARCONTENT ( To be externalised in modules ! )
@@ -68,7 +76,11 @@ const buildPage = (element) => {
 
 function switchTab(e) {
     const src = e.srcElement;
-    console.log(src.innerHTML);
+
+    if(src.classList.contains("current")) {
+        return;
+    }
+
     const modularContent = document.getElementById("modularContent");
     const linkNodes = document.getElementsByClassName("navLink");
 
