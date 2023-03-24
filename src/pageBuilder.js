@@ -58,6 +58,15 @@ const buildPage = (element) => {
 
     // FOOTER
 
+    const footerText = document.createElement("div");
+    footerText.innerHTML = "Copyright @ Pedrolyto --- "
+
+    const footerLink = document.createElement("a");
+    footerLink.href = "https://www.flaticon.com/";
+    footerLink.innerHTML = "Images from Flaticon";
+
+    footer.appendChild(footerText);
+    footer.appendChild(footerLink);
 
     // Structural linking
 
