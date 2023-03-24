@@ -7,35 +7,45 @@
     font-family: 'vanilla';
     src: url('./fonts/vanilla_caramel.otf');
     font-weight: bolder;
-  }
+}
+
+@font-face {
+    font-family: 'tasty';
+    src: url('./fonts/TastyFood.ttf');
+}
+
+@font-face {
+    font-family: 'terus';
+    src: url('./fonts/Terus.ttf');
+}
 
 #content {
     height: 100vh;
     display: grid;
-    grid-template-rows: 200px 1fr 80px;
+    grid-template-rows: 200px 1fr 50px;
 }
 
 
 /* HEADER */
 
 #header {
-    background-color: rgb(51, 46, 46);
+    background-color: rgb(45, 45, 45);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    max-height: 60%;
-    padding: 30px;
+    max-height: 70%;
+    padding: 60px;
     filter: brightness(0) invert(1);
 }
 
 h1 {
     font-family: 'vanilla';
     color: whitesmoke;
-    padding: 30px;
-    font-size: 60px;
+    padding: 60px;
+    font-size: 80px;
 }
 
 
@@ -48,8 +58,45 @@ h1 {
 
 #navigation {
     flex: 1;
-    min-width: 150px;
-    background-color: red;
+    min-width: 200px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.navLink {
+    border: red 1px solid;
+
+    min-height: 60px;
+    min-width: 70%;
+    font-family: "terus";
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 4px 4px 10px black;
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+
+.navLink:hover {
+    box-shadow: 4px 4px 20px black;
+    border: 2px solid black;
+}
+
+.navLink:active {
+    background-color: gray;
+    box-shadow: 4px 4px 10px black;
+}
+
+.current {
+    background-color: rgb(45, 45, 45);
+    color: whitesmoke;
 }
 
 #modularContent {
@@ -65,5 +112,5 @@ h1 {
 /* FOOTER */
 
 #footer {
-    background-color: black;
+    background-color: rgb(45, 45, 45);
 }

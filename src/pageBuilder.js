@@ -1,11 +1,10 @@
+import { createHome } from './home';
+import { createMenu } from './menu';
+import { createContact } from "./contact";
+
 import eggs from './images/eggs.jpg';
 import marmite from './images/marmite.png';
 
-function newElement(type, id) {
-    const newElt = document.createElement(type);
-    newElt.id = id;
-    return newElt;
-}
 
 const buildPage = (element) => {
     console.log("Website under construction...")
@@ -28,6 +27,20 @@ const buildPage = (element) => {
     header.appendChild(logo);
     header.appendChild(title);
 
+    // NAVIGATION
+
+    const linkNames = ["Home", "Menu", "Contact"];
+
+    linkNames.forEach(link => {
+        const newLink = document.createElement("div");
+        newLink.classList.add("navLink");
+        newLink.innerHTML = link;
+        newLink.onclick = switchTab;
+
+        navigation.appendChild(newLink);
+    });
+
+
     // MODULARCONTENT ( To be externalised in modules ! )
 
     /*
@@ -37,6 +50,7 @@ const buildPage = (element) => {
 
     modularContent.appendChild(mainImage);
     */
+
 
     // FOOTER
 
@@ -50,5 +64,44 @@ const buildPage = (element) => {
     element.appendChild(centralContent);
     element.appendChild(footer);
 };
+
+
+function switchTab(e) {
+    const src = e.srcElement;
+    console.log(src.innerHTML);
+    const modularContent = document.getElementById("modularContent");
+    const linkNodes = document.getElementsByClassName("navLink");
+
+    for (let link of linkNodes) {
+        if(link == src) {
+            link.classList.add("current");
+        } else {
+            link.classList.remove("current");
+        }
+    }
+
+    while (modularContent.firstChild) {
+        modularContent.removeChild(modularContent.lastChild);
+    }
+
+    if(src.innerHTML == "Home") {
+        createHome(modularContent);
+
+    } else if (src.innerHTML == "Menu") {
+        createMenu(modularContent);
+
+    } else if (src.innerHTML == "Contact") {
+        createContact(modularContent);
+
+    } else {
+        console.log("ERROR - CANNOT FIND SUITABLE CREATOR");
+    }
+}
+
+function newElement(type, id) {
+    const newElt = document.createElement(type);
+    newElt.id = id;
+    return newElt;
+}
 
 export default buildPage;
