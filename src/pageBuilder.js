@@ -2,7 +2,6 @@ import { createHome } from './home';
 import { createMenu } from './menu';
 import { createContact } from "./contact";
 
-import eggs from './images/eggs.jpg';
 import marmite from './images/marmite.png';
 
 
@@ -22,7 +21,7 @@ const buildPage = (element) => {
     logo.classList.add("logo");
 
     const title = document.createElement("h1");
-    title.innerHTML = "The Eggxellent";
+    title.innerHTML = "The Eggxcellent";
 
     header.appendChild(logo);
     header.appendChild(title);
@@ -47,18 +46,8 @@ const buildPage = (element) => {
     });
 
 
-
-
     // MODULARCONTENT ( To be externalised in modules ! )
-
-    /*
-    const mainImage = new Image();
-    mainImage.src = eggs;
-    mainImage.classList.add("main-image");
-
-    modularContent.appendChild(mainImage);
-    */
-
+    // Empty ( for now ? )
 
     // FOOTER
 
