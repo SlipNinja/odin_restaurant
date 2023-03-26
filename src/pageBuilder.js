@@ -39,22 +39,11 @@ const buildPage = (element) => {
         navigation.appendChild(newLink);
 
         // Set a current tab at load
-        /*
         if(linkName == "Home") {
             newLink.classList.add("current");
             createHome(modularContent);
         }
-        */
-
-        if(linkName == "Menu") {
-            newLink.classList.add("current");
-            createMenu(modularContent);
-        }
     });
-
-
-    // MODULARCONTENT ( To be externalised in modules ! )
-    // Empty ( for now ? )
 
     // FOOTER
 
